@@ -1,6 +1,6 @@
 import { Database } from "bun:sqlite";
 
-const db = new Database("database.sqlite");
+const db = new Database(":memory:");
 
 db.run(`
   CREATE TABLE IF NOT EXISTS items (
@@ -42,7 +42,7 @@ class TodoList {
 
 const lista = new TodoList();
 
-lista.addItem(new Item("estudar typescript"));
+lista.addItem(new Item("estudar ts"));
 lista.addItem(new Item("fazer a atividade"));
 lista.addItem(new Item("commitar no github"));
 
